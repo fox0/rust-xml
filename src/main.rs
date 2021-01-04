@@ -1,4 +1,6 @@
 mod models;
+#[cfg(test)]
+mod tests;
 
 extern crate serde;
 extern crate serde_xml_rs;
@@ -9,14 +11,15 @@ use serde_xml_rs::{from_str, to_string};
 use crate::models::{AuthData, Item};
 
 fn main() {
-    // let a = AuthData {
-    //     login: "fox".to_string(),
-    //     pass: "Trixie is Best Pony000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000".to_string(),
-    // };
-    // a.validate().unwrap();
-    //
-    // let xml = to_string(&a).unwrap();
-    // dbg!(xml);
+    let a = AuthData {
+        login: "fox".to_string(),
+        pass: "Trixie is Best Pony".to_string(),
+        institution_id: None,
+    };
+    a.validate().unwrap();
+
+    let xml = to_string(&a).unwrap();
+    dbg!(xml);
 
     let src = r#"<Item><name>Banana</name><source>Store</source></Item>"#;
     // let should_be = Item {
