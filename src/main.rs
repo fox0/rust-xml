@@ -1,6 +1,4 @@
 mod models;
-#[cfg(test)]
-mod tests;
 
 extern crate serde;
 extern crate serde_xml_rs;

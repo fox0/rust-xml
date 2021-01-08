@@ -13,8 +13,8 @@ use validator::Validate;
 ''', file=file)
 
     filenames = [
-        'schemas/запрос-авторизация.xsd',
-        # 'schemas/запрос-детали по справочнику.xsd',
+        # 'schemas/запрос-авторизация.xsd',
+        'schemas/запрос-проверка 1 заявления.xsd',
     ]
     for f in filenames:
         parse_xsd(f)
